@@ -1,0 +1,49 @@
+configuration {
+	modi: 						"drun";
+	font: 						"Fira Mono 8";
+	location: 				1;
+	yoffset: 					20;
+	xoffset: 					25;
+	disable-history: 	true;
+  display-drun: "apps";
+  show-icons: true;
+}
+
+horibox {
+  orientation: 			horizontal;
+  children:   			[ prompt,textbox-prompt-colon, entry, listview ];
+}
+
+listview {
+  layout:     			horizontal;
+  spacing:    			5px;
+  lines:      			3;
+}
+
+element {
+  highlight: 				none;
+}
+
+window {
+  children:   			[ horibox ];
+}
+
+entry {
+  expand:     			false;
+  width:      			10em;
+}
+
+* {
+  background-color: #0f1c32;
+}
+
+textbox-prompt-colon {
+  str: "::";
+  expand: false;
+}
+
+element-icon {
+  size: 12px;
+  padding: 0 3px 0 0;
+  vertical-align: 0.0;
+}

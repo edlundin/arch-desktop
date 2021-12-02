@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+SCREEN_FILE=/tmp/.lockscreen.png
+
+function _lockscreen () {
+  scrot $1
+  convert -scale 10% -scale 1000% "$1" "$1"
+  i3lock -u -i $1 && \
+  sleep 5 && \
+  xset dpms force off
+}
+
+if [ -e ${SCREEN_FILE} ] ; then
+  rm -f ${SCREEN_FILE}
+  _lockscreen ${SCREEN_FILE}
+else
+  _lockscreen ${SCREEN_FILE}
+fi
