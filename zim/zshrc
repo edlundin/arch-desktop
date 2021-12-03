@@ -125,3 +125,4 @@ bindkey -M vicmd 'j' history-substring-search-down
 alias cat='bat -n --paging=never'
 alias ls='exa'
 alias ll='ls -alh'
+alias l='ll'
