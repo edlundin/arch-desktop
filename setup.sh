@@ -6,7 +6,7 @@ echo "Updating system"
 paru -Syyu
 
 echo "Installing dependencies..."
-paru -S --needed fd exa bat zsh vim ly terminator fman curl git ttf-fira-code evince mupdf gnupg pipewire bspwm rofi sxhkd ttf-fira-mono ttf-material-icons polybar xorg-xinit xorg-xsetroot xorg compton-tryone-git imagemagick i3lock scrot stow feh
+paru -S --needed gnome-keyring libsecret libgnome-keyring fd exa bat zsh vim ly terminator fman curl git ttf-fira-code evince mupdf gnupg pipewire bspwm rofi sxhkd ttf-fira-mono ttf-material-icons polybar xorg-xinit xorg-xsetroot xorg compton-tryone-git imagemagick i3lock scrot stow feh
 
 echo "Installing vim plugins..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
