@@ -26,6 +26,10 @@ super + s
 super + e
 	fman
 
+# Lock screen
+super + l
+    wm.bspwm_lockscreen
+
 #
 # bspwm hotkeys
 #
