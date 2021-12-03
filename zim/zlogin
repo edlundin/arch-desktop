@@ -6,5 +6,3 @@
 # Initialize Zim
 source ${ZIM_HOME}/login_init.zsh -q &!
 # }}} End configuration added by Zim install
-
-setxkbmap -model pc105 -layout us -variant intl -option compose:ralt

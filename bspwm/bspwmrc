@@ -35,3 +35,5 @@ for monitor in ${monitors[@]}; do
 	min=$(($min + $div))
 	let mon++
 done
+
+setxkbmap -model pc105 -layout us -variant intl -option compose:ralt
