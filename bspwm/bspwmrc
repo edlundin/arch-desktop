@@ -37,4 +37,4 @@ for monitor in ${monitors[@]}; do
 done
 
 gnome-keyring-daemon --start &
-setxkbmap -model pc105 -layout us -variant intl -option compose:ralt
+setxkbmap -model pc105 -layout us -variant intl -option compose:ralt &
