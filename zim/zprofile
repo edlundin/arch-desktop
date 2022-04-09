@@ -1,4 +1,4 @@
-SSH_PAGEANT_PATH="/mnt/c/Users/edvar/OneDrive/Documents/wsl2-ssh-pageant.exe"
+SSH_PAGEANT_PATH="$HOME/.ssh/wsl2-ssh-pageant.exe"
 GPG_BASE_PATH="C\:/Users/edvar/AppData/Local/gnupg"
 
 # SSH Socket
