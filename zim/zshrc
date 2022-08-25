@@ -122,8 +122,11 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
+eval "$(jenv init -)"
+
 alias cat='bat -n --paging=never'
 alias ls='exa'
 alias ll='ls -alh'
 alias l='ll'
 alias pnx='pnpm nx'
+alias python='/usr/bin/python3'
