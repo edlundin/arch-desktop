@@ -22,7 +22,11 @@ set hidden                                       " hide buffers, don't close
 set mouse=a                                      " enable mouse support
 set nowrap                                       " disable wrapping
 set number                                       " show line numbers
-set term=xterm-256color                          " terminal type
+
+if  !has('nvim')
+    set term=xterm-256color                          " terminal type
+endif
+
 set wildmenu wildmode=longest:full,full          " wildmode settings
 set wildcharm=<Tab>                              " wildmenu character
 set showcmd                                      " show command keys
