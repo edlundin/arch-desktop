@@ -39,5 +39,5 @@ zmodule prompt-pwd
 
 # Themes
 #zmodule miekg/lean
-zmodule minimal
+#zmodule minimal
 
