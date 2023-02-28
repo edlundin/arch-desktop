@@ -126,6 +126,12 @@ bindkey -M vicmd 'j' history-substring-search-down
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 [[ -f ~/.zsh/nvm.zsh ]] && source ~/.zsh/nvm.zsh
 [[ -f ~/.zsh/wsl2fix.zsh ]] && source ~/.zsh/wsl2fix.zsh
+[[ -f ~/.starship.zsh ]] && source ~/.starship.zsh
+
+alias cat='bat -n --paging=never'
+alias pnx='pnpm nx'
+alias vim='/opt/homebrew/bin/nvim'
+alias ll='l'
 
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
