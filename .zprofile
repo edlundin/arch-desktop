@@ -19,6 +19,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Created by `pipx` on 2023-08-25 08:56:04
 export PATH="$PATH:/Users/edlundin/Library/Android/sdk/platform-tools:/Users/edlundin/go/bin:/Users/edlundin/.local/bin:/Users/edlundin/.platformio/penv/bin"
 export PATH="$PATH:/Users/edlundin/.bin"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init -)"
