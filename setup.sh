@@ -5,7 +5,7 @@ brew update
 brew upgrade --greedy
 
 echo "Installing dependencies..."
-brew install fd exa bat zsh neovim wget curl git gnupg2 stow feh starship aerospace
+brew install fd exa bat zsh neovim wget curl git gnupg2 stow feh starship aerospace zellij
 brew tap homebrew/cask-fonts
 brew install font-monaspace-nerd-font --cask
 
