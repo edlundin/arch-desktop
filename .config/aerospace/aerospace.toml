@@ -181,3 +181,7 @@ run = 'move-node-to-workspace WEBBR'
 [[on-window-detected]]
 if.app-id = 'com.bitwarden.desktop'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace DEV'
