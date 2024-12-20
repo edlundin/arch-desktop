@@ -1,8 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -21,7 +16,12 @@ export PATH="$PATH:/Users/edlundin/Library/Android/sdk/platform-tools:/Users/edl
 export PATH="$PATH:/Users/edlundin/.bin"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(pyenv init -)"
+export NVM_DIR=$HOME/.nvm
+#source $HOMEBREW_PREFIX/opt/nvm/nvm.sh
+
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

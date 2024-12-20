@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -78,18 +71,23 @@ setopt INC_APPEND_HISTORY
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-nvm
   git
   fzf-tab
   zsh-autosuggestions
   zsh-fzf-history-search
   zsh-syntax-highlighting
   you-should-use
+  evalcache
 )
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src # For zsh-completions
 
@@ -99,18 +97,18 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
 # Add completions for pipx
-eval $(register-python-argcomplete pipx)
+_evalcache register-python-argcomplete pipx
 
 # Add completions for ansible
-eval $(register-python-argcomplete ansible)
-eval $(register-python-argcomplete ansible-config)
-eval $(register-python-argcomplete ansible-console)
-eval $(register-python-argcomplete ansible-doc)
-eval $(register-python-argcomplete ansible-galaxy)
-eval $(register-python-argcomplete ansible-inventory)
-eval $(register-python-argcomplete ansible-playbook)
-eval $(register-python-argcomplete ansible-pull)
-eval $(register-python-argcomplete ansible-vault)
+_evalcache register-python-argcomplete ansible
+_evalcache register-python-argcomplete ansible-config
+_evalcache register-python-argcomplete ansible-console
+_evalcache register-python-argcomplete ansible-doc
+_evalcache register-python-argcomplete ansible-galaxy
+_evalcache register-python-argcomplete ansible-inventory
+_evalcache register-python-argcomplete ansible-playbook
+_evalcache register-python-argcomplete ansible-pull
+_evalcache register-python-argcomplete ansible-vault
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -149,4 +147,19 @@ alias pnx='pnpm nx'
 alias vim='/opt/homebrew/bin/nvim'
 alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
 
-eval "$(starship init zsh)"
+_evalcache /opt/homebrew/bin/brew shellenv
+
+#export GPG_TTY="$(tty)"
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+#gpgconf --launch gpg-agent
+
+_evalcache zoxide init --cmd cd zsh
+_evalcache pyenv init -
+_evalcache starship init zsh
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/edlundin/.dart-cli-completion/zsh-config.zsh ]] && . /Users/edlundin/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
