@@ -91,6 +91,8 @@ plugins=(
 )
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src # For zsh-completions
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#585858,bold'
+
 source $ZSH/oh-my-zsh.sh
 
 autoload -U +X bashcompinit && bashcompinit
